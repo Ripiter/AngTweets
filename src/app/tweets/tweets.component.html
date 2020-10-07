@@ -1,0 +1,22 @@
+<input #box2 (keyup)="onKey(box2.value)">
+<button (click)="onClickMe()">Click me!</button>
+
+<div *ngFor="let tweet of twat;let i = index">
+    <!-- <div [className]="check(tweet.text) ? 'bgColor' : 'bgColorRed-class'">  -->
+        
+        <!-- <p *ngIf="checkforDate(tweet.date) && checkForLikes(tweet.likes)">
+            {{i}}: {{tweet.text}}
+        </p> -->
+
+        <p [ngClass]="{
+            'bgColorRed':check(tweet.text),
+            'bgColor':checkforDate(tweet.date),
+            'bgColorRed':checkForLikes(tweet.likes)
+          }">
+            {{i}}: {{tweet.text}}
+        </p>
+
+
+    <!-- </div> -->
+    <br>
+  </div>
